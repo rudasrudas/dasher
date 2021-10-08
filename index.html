@@ -1,19 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- SEO -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dasher</title>
 
-    <style href="./styles/style.css"></style>
-    <style href="./styles/dashboard.css"></style>
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+
+    <!-- JS -->
+    <script src="scripts/ejs.min.js"></script>
 </head>
 <body>
     <div id="dashboard-window">
-        <div id="dashboard-nav">
-
+        <div id="dashboard-nav" class="dashboard-offset-top">
+            <div class="nav-item">
+                <img src="static/icons/emails.svg" class="nav-item-icon">
+                <h3 class="nav-item-title">Emails</h3>
+            </div>
+            <div class="nav-item">
+                <img src="static/icons/messages.svg" class="nav-item-icon">
+                <h3 class="nav-item-title">Messages</h3>
+            </div>
+            <div class="nav-item">
+                <img src="static/icons/notes.svg" class="nav-item-icon">
+                <h3 class="nav-item-title">Notes</h3>
+            </div>
+            <div class="nav-item">
+                <img src="static/icons/music.svg" class="nav-item-icon">
+                <h3 class="nav-item-title">Music</h3>
+                <img src="static/icons/close.svg" class="nav-item-close">
+            </div>
+            <div class="nav-item">
+                <img src="static/icons/weather.svg" class="nav-item-icon">
+                <h3 class="nav-item-title">Weather</h3>
+                <img src="static/icons/close.svg" class="nav-item-close">
+            </div>
         </div>
+        <div id="dashboard-content" class="dashboard-offset-top">
+
+            <!-- DEFAULT DASHBOARD -->
+            <div id="default-dashboard" class="dashboard-window no-display">
+                <div id="dash-time-block">
+                    <h1 id="dash-time">20:43</h1>
+                    <h2 id="dash-date">08/10/2021</h2>
+                </div>
+                <input type="text" id="default-search" class="search-box">
+                <div id="default-feed" class="feed"></div>
+            </div>
+
+
+            <!-- EMAIL -->
+            <div id="email-dashboard" class="dashboard-window no-display">
+                <div class="dashboard-content-header">
+                    <img src="static/icons/return.svg" class="return-btn">
+                    <input type="text" id="email-search" class="search-box inline">
+                </div>
+                <div id="email-address-list" class="pillbox"></div>
+                <div id="email-feed" class="feed"></div>
+            </div>
+
+
+            <!-- MESSAGE -->
+            <div id="message-dashboard" class="dashboard-window no-display">
+                <div class="dashboard-content-header">
+                    <img src="static/icons/return.svg" class="return-btn">
+                    <input type="text" id="message-search" class="search-box inline">
+                </div>
+                <div id="message-platform-list" class="pillbox"></div>
+                <div id="message-feed" class="feed"></div>
+            </div>
+
+            <!-- NOTE -->
+            <div id="note-dashboard" class="dashboard-window no-display">
+                <div class="dashboard-content-header">
+                    <img src="static/icons/return.svg" class="return-btn">
+                    <input type="text" id="message-search" class="search-box inline">
+                </div>
+                <a class="platform-redirect" href="https://keep.google.com/" target="_blank">
+                    <h5>Google Keep</h5>
+                    <img src="static/icons/redirect.svg" class="platform-redirect-icon">
+                </a>
+                <div id="note-feed" class="feed"></div>
+            </div>
+
+            <!-- MUSIC -->
+            <div id="music-dashboard" class="dashboard-window no-display">
+                <div class="dashboard-content-header">
+                    <img src="static/icons/return.svg" class="return-btn">
+                    <input type="text" id="message-search" class="search-box inline">
+                </div>
+                <a class="platform-redirect" href="https://music.youtube.com/" target="_blank">
+                    <h5>Youtube Music</h5>
+                    <img src="static/icons/redirect.svg" class="platform-redirect-icon">
+                </a>
+                <div id="music-feed">
+                    <div id="music-playlist-feed" class="feed"></div>
+                    <div id="music-song-feed" class="feed no-display"></div>
+                </div>
+                <div id="music-controller" class="add-bottom">
+                    <div id="music-controls">
+                        <img src="static/icons/music-prev.svg" id="music-prev">
+                        <img src="static/icons/music-play.svg" id="music-play">
+                        <img src="static/icons/music-next.svg" id="music-next">
+                    </div>
+                    <div id="song-details">
+                        <h4 id="song-title">For What It's Worth</h4>
+                        <h5 id="artist-name">Buffalo Springfield</h5>
+                    </div>
+                    <div id="music-actions">
+                        <img src="static/icons/like.svg" alt="" id="song-like">
+                        <img src="static/icons/music-shuffle.svg" alt="" id="music-shuffle">
+                        <img src="static/icons/playlist-play.svg" alt="" id="music-playlist">
+                    </div>
+                </div>
+            </div>
+
+            <!-- WEATHER -->
+            <div id="weather-dashboard" class="dashboard-window">
+                <div class="dashboard-content-header">
+                    <img src="static/icons/return.svg" class="return-btn">
+                    <a class="platform-redirect" href="https://www.accuweather.com/" target="_blank">
+                        <h5>AccuWeather</h5>
+                        <img src="static/icons/redirect.svg" class="platform-redirect-icon">
+                    </a>
+                </div>
+                <ul id="weather-tabs" class="horizontal-tabs add-top">
+                    <li>Now</li>
+                    <li>Hourly</li>
+                    <li>Daily</li>
+                </ul>
+                <div id="weather-info" class="add-bottom">
+                    <div id="weather-now" class="">
+                        <h1 id="weather-now-temp">10ºC</h1>
+                        <div id="weather-now-status">
+                            <img src="https://www.accuweather.com/images/weathericons/18.svg" id="weather-now-icon">
+                            <h4 id="weather-now-status-text">Heavy rain</h4>
+                        </div>
+                        <ul id="weather-now-details">
+                            <li>
+                                <h4 id="weather-now-precipitation">60</h4><h4>%</h4>
+                                <h5>Precipitation</h5>
+                            </li>
+                            <li>
+                                <h4 id="weather-now-cloud-coverage">20</h4><h4>%</h4>
+                                <h5>Cloud coverage</h5>
+                            </li>
+                            <li>
+                                <h4 id="weather-now-wind">6</h4><h5>km/h</h5>
+                                <h5>Wind</h5>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="weather-hourly" class="feed no-display">
+                        
+                    </div>
+                    <div id="weather-daily" class="feed no-display">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="dashboard-remarks"></div>
     </div>
 </body>
 </html>
