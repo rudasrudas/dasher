@@ -1,0 +1,5 @@
+@import url('/styles/style.css');
+
+.icon:hover {
+    color: var(--blue-600);
+}

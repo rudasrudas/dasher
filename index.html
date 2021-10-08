@@ -10,6 +10,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/theme-aviator.css">
 
     <!-- JS -->
     <script src="scripts/ejs.min.js"></script>
@@ -18,26 +19,26 @@
     <div id="dashboard-window">
         <div id="dashboard-nav" class="dashboard-offset-top">
             <div class="nav-item">
-                <img src="static/icons/emails.svg" class="nav-item-icon">
+                <img src="static/icons/emails.svg" class="nav-item-icon icon">
                 <h3 class="nav-item-title">Emails</h3>
             </div>
             <div class="nav-item">
-                <img src="static/icons/messages.svg" class="nav-item-icon">
+                <img src="static/icons/messages.svg" class="nav-item-icon icon">
                 <h3 class="nav-item-title">Messages</h3>
             </div>
             <div class="nav-item">
-                <img src="static/icons/notes.svg" class="nav-item-icon">
+                <img src="static/icons/notes.svg" class="nav-item-icon icon">
                 <h3 class="nav-item-title">Notes</h3>
             </div>
             <div class="nav-item">
-                <img src="static/icons/music.svg" class="nav-item-icon">
+                <img src="static/icons/music.svg" class="nav-item-icon icon">
                 <h3 class="nav-item-title">Music</h3>
-                <img src="static/icons/close.svg" class="nav-item-close">
+                <img src="static/icons/close.svg" class="nav-item-close icon">
             </div>
             <div class="nav-item">
-                <img src="static/icons/weather.svg" class="nav-item-icon">
+                <img src="static/icons/weather.svg" class="nav-item-icon icon">
                 <h3 class="nav-item-title">Weather</h3>
-                <img src="static/icons/close.svg" class="nav-item-close">
+                <img src="static/icons/close.svg" class="nav-item-close icon">
             </div>
         </div>
         <div id="dashboard-content" class="dashboard-offset-top">
@@ -56,7 +57,7 @@
             <!-- EMAIL -->
             <div id="email-dashboard" class="dashboard-window no-display">
                 <div class="dashboard-content-header">
-                    <img src="static/icons/return.svg" class="return-btn">
+                    <img src="static/icons/return.svg" class="return-btn icon">
                     <input type="text" id="email-search" class="search-box inline">
                 </div>
                 <div id="email-address-list" class="pillbox"></div>
@@ -67,7 +68,7 @@
             <!-- MESSAGE -->
             <div id="message-dashboard" class="dashboard-window no-display">
                 <div class="dashboard-content-header">
-                    <img src="static/icons/return.svg" class="return-btn">
+                    <img src="static/icons/return.svg" class="return-btn icon">
                     <input type="text" id="message-search" class="search-box inline">
                 </div>
                 <div id="message-platform-list" class="pillbox"></div>
@@ -77,25 +78,25 @@
             <!-- NOTE -->
             <div id="note-dashboard" class="dashboard-window no-display">
                 <div class="dashboard-content-header">
-                    <img src="static/icons/return.svg" class="return-btn">
+                    <img src="static/icons/return.svg" class="return-btn icon">
                     <input type="text" id="message-search" class="search-box inline">
                 </div>
                 <a class="platform-redirect" href="https://keep.google.com/" target="_blank">
                     <h5>Google Keep</h5>
-                    <img src="static/icons/redirect.svg" class="platform-redirect-icon">
+                    <img src="static/icons/redirect.svg" class="platform-redirect-icon icon">
                 </a>
                 <div id="note-feed" class="feed"></div>
             </div>
 
             <!-- MUSIC -->
-            <div id="music-dashboard" class="dashboard-window no-display">
+            <div id="music-dashboard" class="dashboard-window">
                 <div class="dashboard-content-header">
-                    <img src="static/icons/return.svg" class="return-btn">
+                    <img src="static/icons/return.svg" class="return-btn icon">
                     <input type="text" id="message-search" class="search-box inline">
                 </div>
                 <a class="platform-redirect" href="https://music.youtube.com/" target="_blank">
                     <h5>Youtube Music</h5>
-                    <img src="static/icons/redirect.svg" class="platform-redirect-icon">
+                    <img src="static/icons/redirect.svg" class="platform-redirect-icon icon">
                 </a>
                 <div id="music-feed">
                     <div id="music-playlist-feed" class="feed"></div>
@@ -103,29 +104,29 @@
                 </div>
                 <div id="music-controller" class="add-bottom">
                     <div id="music-controls">
-                        <img src="static/icons/music-prev.svg" id="music-prev">
-                        <img src="static/icons/music-play.svg" id="music-play">
-                        <img src="static/icons/music-next.svg" id="music-next">
+                        <img src="static/icons/music-prev.svg" id="music-prev" class=" icon">
+                        <img src="static/icons/music-play.svg" id="music-play" class=" icon">
+                        <img src="static/icons/music-next.svg" id="music-next" class=" icon">
                     </div>
                     <div id="song-details">
                         <h4 id="song-title">For What It's Worth</h4>
                         <h5 id="artist-name">Buffalo Springfield</h5>
                     </div>
                     <div id="music-actions">
-                        <img src="static/icons/like.svg" alt="" id="song-like">
-                        <img src="static/icons/music-shuffle.svg" alt="" id="music-shuffle">
-                        <img src="static/icons/playlist-play.svg" alt="" id="music-playlist">
+                        <img src="static/icons/like.svg" alt="" id="song-like" class=" icon">
+                        <img src="static/icons/music-shuffle.svg" alt="" id="music-shuffle" class=" icon">
+                        <img src="static/icons/playlist-play.svg" alt="" id="music-playlist" class=" icon">
                     </div>
                 </div>
             </div>
 
             <!-- WEATHER -->
-            <div id="weather-dashboard" class="dashboard-window">
+            <div id="weather-dashboard" class="dashboard-window no-display">
                 <div class="dashboard-content-header">
-                    <img src="static/icons/return.svg" class="return-btn">
+                    <img src="static/icons/return.svg" class="return-btn icon">
                     <a class="platform-redirect" href="https://www.accuweather.com/" target="_blank">
                         <h5>AccuWeather</h5>
-                        <img src="static/icons/redirect.svg" class="platform-redirect-icon">
+                        <img src="static/icons/redirect.svg" class="platform-redirect-icon icon">
                     </a>
                 </div>
                 <ul id="weather-tabs" class="horizontal-tabs add-top">
@@ -135,7 +136,7 @@
                 </ul>
                 <div id="weather-info" class="add-bottom">
                     <div id="weather-now" class="">
-                        <h1 id="weather-now-temp">10ºC</h1>
+                        <h1 id="weather-now-temp">10°C</h1>
                         <div id="weather-now-status">
                             <img src="https://www.accuweather.com/images/weathericons/18.svg" id="weather-now-icon">
                             <h4 id="weather-now-status-text">Heavy rain</h4>

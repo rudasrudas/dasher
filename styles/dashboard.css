@@ -201,6 +201,12 @@
     flex: 1;
     margin: 20px 0px;
     overflow-y: scroll;
+    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+}
+
+.feed::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
 }
 
 .dashboard-content-header {
