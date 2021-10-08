@@ -1,0 +1,14 @@
+#dashboard-window {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    
+}
+
+#dashboard-nav {
+    height: 100%;
+    width: 200px;
+
+    border: solid 2px red;
+}
