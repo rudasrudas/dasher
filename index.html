@@ -8,37 +8,39 @@
     <title>Dasher</title>
 
     <!-- CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/dashboard.css">
     <link rel="stylesheet" href="styles/theme-aviator.css">
 
     <!-- JS -->
     <script src="scripts/ejs.min.js"></script>
+    <script src="scripts/dashboard.js"></script>
 </head>
 <body>
     <div id="dashboard-window">
-        <div id="dashboard-nav" class="dashboard-offset-top">
-            <div class="nav-item">
-                <img src="static/icons/emails.svg" class="nav-item-icon icon">
+        <div id="dashboard-nav" class="nav dashboard-offset-top">
+            <div id="nav-emails" class="nav-item">
+                <span class="nav-item-icon icon material-icons">email</span>
                 <h3 class="nav-item-title">Emails</h3>
             </div>
-            <div class="nav-item">
-                <img src="static/icons/messages.svg" class="nav-item-icon icon">
+            <div id="nav-messages" class="nav-item">
+                <span class="nav-item-icon icon material-icons">chat</span>
                 <h3 class="nav-item-title">Messages</h3>
             </div>
-            <div class="nav-item">
-                <img src="static/icons/notes.svg" class="nav-item-icon icon">
+            <div id="nav-notes" class="nav-item">
+                <span class="nav-item-icon icon material-icons">description</span>
                 <h3 class="nav-item-title">Notes</h3>
             </div>
-            <div class="nav-item">
-                <img src="static/icons/music.svg" class="nav-item-icon icon">
+            <div id="nav-music" class="nav-item">
+                <span class="nav-item-icon icon material-icons">music_note</span>
                 <h3 class="nav-item-title">Music</h3>
-                <img src="static/icons/close.svg" class="nav-item-close icon">
+                <span class="nav-item-close icon material-icons">close</span>
             </div>
-            <div class="nav-item">
-                <img src="static/icons/weather.svg" class="nav-item-icon icon">
+            <div id="nav-weather" class="nav-item">
+                <span class="nav-item-icon icon material-icons">cloud</span>
                 <h3 class="nav-item-title">Weather</h3>
-                <img src="static/icons/close.svg" class="nav-item-close icon">
+                <span class="nav-item-close icon material-icons">close</span>
             </div>
         </div>
         <div id="dashboard-content" class="dashboard-offset-top">
@@ -57,7 +59,7 @@
             <!-- EMAIL -->
             <div id="email-dashboard" class="dashboard-window no-display">
                 <div class="dashboard-content-header">
-                    <img src="static/icons/return.svg" class="return-btn icon">
+                    <span class="material-icons return-btn icon">arrow_back</span>
                     <input type="text" id="email-search" class="search-box inline">
                 </div>
                 <div id="email-address-list" class="pillbox"></div>
@@ -68,7 +70,7 @@
             <!-- MESSAGE -->
             <div id="message-dashboard" class="dashboard-window no-display">
                 <div class="dashboard-content-header">
-                    <img src="static/icons/return.svg" class="return-btn icon">
+                    <span class="material-icons return-btn icon">arrow_back</span>
                     <input type="text" id="message-search" class="search-box inline">
                 </div>
                 <div id="message-platform-list" class="pillbox"></div>
@@ -78,12 +80,12 @@
             <!-- NOTE -->
             <div id="note-dashboard" class="dashboard-window no-display">
                 <div class="dashboard-content-header">
-                    <img src="static/icons/return.svg" class="return-btn icon">
+                    <span class="material-icons return-btn icon">arrow_back</span>
                     <input type="text" id="message-search" class="search-box inline">
                 </div>
                 <a class="platform-redirect" href="https://keep.google.com/" target="_blank">
                     <h5>Google Keep</h5>
-                    <img src="static/icons/redirect.svg" class="platform-redirect-icon icon">
+                    <span class="material-icons platform-redirect-icon icon">open_in_new</span>
                 </a>
                 <div id="note-feed" class="feed"></div>
             </div>
@@ -91,31 +93,31 @@
             <!-- MUSIC -->
             <div id="music-dashboard" class="dashboard-window">
                 <div class="dashboard-content-header">
-                    <img src="static/icons/return.svg" class="return-btn icon">
+                    <span class="material-icons return-btn icon">arrow_back</span>
                     <input type="text" id="message-search" class="search-box inline">
                 </div>
                 <a class="platform-redirect" href="https://music.youtube.com/" target="_blank">
                     <h5>Youtube Music</h5>
-                    <img src="static/icons/redirect.svg" class="platform-redirect-icon icon">
+                    <span class="material-icons platform-redirect-icon icon">open_in_new</span>
                 </a>
                 <div id="music-feed">
                     <div id="music-playlist-feed" class="feed"></div>
-                    <div id="music-song-feed" class="feed no-display"></div>
+                    <div id="music-song-feed" class="feed no-display">Playlist contents!</div>
                 </div>
                 <div id="music-controller" class="add-bottom">
                     <div id="music-controls">
-                        <img src="static/icons/music-prev.svg" id="music-prev" class=" icon">
-                        <img src="static/icons/music-play.svg" id="music-play" class=" icon">
-                        <img src="static/icons/music-next.svg" id="music-next" class=" icon">
+                        <span id="music-prev" class="material-icons icon">skip_previous</span>
+                        <span id="music-play" class="material-icons icon">play_arrow</span>
+                        <span id="music-next" class="material-icons icon">skip_next</span>
                     </div>
                     <div id="song-details">
                         <h4 id="song-title">For What It's Worth</h4>
                         <h5 id="artist-name">Buffalo Springfield</h5>
                     </div>
                     <div id="music-actions">
-                        <img src="static/icons/like.svg" alt="" id="song-like" class=" icon">
-                        <img src="static/icons/music-shuffle.svg" alt="" id="music-shuffle" class=" icon">
-                        <img src="static/icons/playlist-play.svg" alt="" id="music-playlist" class=" icon">
+                        <span id="song-like" class="material-icons icon">thumb_up_alt</span>
+                        <span id="music-shuffle" class="material-icons icon">shuffle</span>
+                        <span id="music-playlist" class="material-icons icon">arrow_drop_up</span>
                     </div>
                 </div>
             </div>
@@ -123,19 +125,19 @@
             <!-- WEATHER -->
             <div id="weather-dashboard" class="dashboard-window no-display">
                 <div class="dashboard-content-header">
-                    <img src="static/icons/return.svg" class="return-btn icon">
+                    <span class="material-icons return-btn icon">arrow_back</span>
                     <a class="platform-redirect" href="https://www.accuweather.com/" target="_blank">
                         <h5>AccuWeather</h5>
-                        <img src="static/icons/redirect.svg" class="platform-redirect-icon icon">
+                        <span class="material-icons platform-redirect-icon icon">open_in_new</span>
                     </a>
                 </div>
                 <ul id="weather-tabs" class="horizontal-tabs add-top">
-                    <li>Now</li>
-                    <li>Hourly</li>
-                    <li>Daily</li>
+                    <li id="weather-now-tab">Now</li>
+                    <li id="weather-hourly-tab">Hourly</li>
+                    <li id="weather-daily-tab">Daily</li>
                 </ul>
                 <div id="weather-info" class="add-bottom">
-                    <div id="weather-now" class="">
+                    <div id="weather-now" class="weather-window">
                         <h1 id="weather-now-temp">10°C</h1>
                         <div id="weather-now-status">
                             <img src="https://www.accuweather.com/images/weathericons/18.svg" id="weather-now-icon">
@@ -156,10 +158,10 @@
                             </li>
                         </ul>
                     </div>
-                    <div id="weather-hourly" class="feed no-display">
+                    <div id="weather-hourly" class="weather-window feed no-display">
                         
                     </div>
-                    <div id="weather-daily" class="feed no-display">
+                    <div id="weather-daily" class="weather-window feed no-display">
                     </div>
                 </div>
             </div>

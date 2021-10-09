@@ -7,32 +7,7 @@
     justify-content: center;
 }
 
-    #dashboard-nav {
-        height: inherit;
-        width: 200px;
-        margin-left: 15px;
-    }
-
-        .nav-item {
-            display: flex;
-            padding-bottom: 1rem;
-            position: relative;
-            width: inherit;
-        }
-
-            .nav-item-icon {
-                width: 1.25rem;
-                height: auto;
-            }
-
-            .nav-item-title {
-                margin-left: 0.5rem; 
-            }
-
-            .nav-item-close {
-                right: 0.75rem;
-                position: absolute;
-            }
+    #dashboard-nav {}
 
     #dashboard-content {
         height: inherit;
@@ -104,7 +79,7 @@
                     flex: 1;
                 }
 
-                    #music-actions img {
+                    #music-actions * {
                         margin-left: 10px;
                     }
 
@@ -187,28 +162,6 @@
     padding-top: 60px;
 }
 
-.search-box {
-    padding: 5px 10px;
-    font-size: 1.5rem;
-}
-
-.search-box.inline {
-    flex: 1;
-}
-
-.feed {
-    width: 100%;
-    flex: 1;
-    margin: 20px 0px;
-    overflow-y: scroll;
-    scrollbar-width: none;  /* Hide scrollbar for Firefox */
-}
-
-.feed::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
-    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
-}
-
 .dashboard-content-header {
     height: auto;
     width: 100%;
@@ -216,43 +169,3 @@
     flex-direction: row;
 }
 
-.return-btn {
-    width: 3rem;
-    height: auto;
-    margin-right: 10px;
-}
-
-.no-display {
-    display: none !important;
-}
-
-.pillbox {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-}
-
-.platform-redirect {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: flex-end;
-    align-items: flex-start;
-    margin-top: 5px;
-    text-decoration: none;
-    color: inherit;
-}
-
-.platform-redirect-icon {
-    width: 1rem;
-    height: auto;
-}
-
-.add-top {
-    margin-top: 20px;
-}
-
-.add-bottom {
-    margin-bottom: 20px;
-}

@@ -1,5 +1,5 @@
 @import url('/styles/style.css');
 
-.icon:hover {
+.nav-item:hover {
     color: var(--blue-600);
 }
