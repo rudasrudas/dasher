@@ -44,7 +44,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 h4 {
@@ -134,6 +134,15 @@ h5 {
     display: none !important;
 }
 
+.no-right-padding {
+    padding-right: 0px !important;
+}
+
+.no-left-padding {
+    padding-left: 0px !important;
+}
+
+
 .pillbox {
     display: flex;
     flex-direction: row;
@@ -146,19 +155,115 @@ h5 {
     font-size: 1.5rem;
 }
 
-.search-box.inline {
-    flex: 1;
+    .search-box.inline {
+        flex: 1;
+    }
+
+.sticky-top-right {
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 .feed {
-    width: 100%;
+    width: inherit;
     flex: 1;
     margin: 20px 0px;
     overflow-y: scroll;
     scrollbar-width: none;  /* Hide scrollbar for Firefox */
 }
 
-.feed::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
-    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
-}
+    .feed::-webkit-scrollbar {
+        display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+        -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+    }
+
+    .dash-item {
+        width: inherit;
+        height: auto;
+        min-height: 50px;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 10px;
+
+        border: solid 1px gray;             /* GOTTA GO */
+    }
+
+        .dash-item-picture {
+            width: 50px;
+            margin: 10px;
+            border-radius: 100px;
+            height: fit-content;
+        }
+
+            .icon-picture {
+                height: 50px;
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                background-color: #adb5bd;      /* GOTTA GO */
+            }
+
+        .dash-item-content {
+            flex: 1;
+            padding: 10px;
+        }
+
+            .dash-item-time {
+                padding: 10px;
+            }
+
+            .dash-item-pretext {
+                padding-right: 35px;
+            }
+
+            .dash-item-title {}
+
+                .checked {
+                    text-decoration: line-through;
+                }
+
+            .dash-item-checkbox {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+
+                .checkbox {
+                    margin-right: 10px;
+                }
+
+            .dash-item-description {
+                font-weight: 400;
+            }
+
+            .clip-text {
+                position: relative;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                height: 1.2em;
+                overflow: hidden;
+            }
+              
+            .clip-text::after {
+                content: "";
+                text-align: right;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 25%;
+                height: 1.2em;
+                background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+            }
+
+            .dash-item-actions {
+                padding: 10px;
+            }
+
+                .dash-item-action {
+                    font-size: 1.5rem;
+                }

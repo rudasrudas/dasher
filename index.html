@@ -8,7 +8,7 @@
     <title>Dasher</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/dashboard.css">
     <link rel="stylesheet" href="styles/theme-aviator.css">
@@ -21,15 +21,15 @@
     <div id="dashboard-window">
         <div id="dashboard-nav" class="nav dashboard-offset-top">
             <div id="nav-emails" class="nav-item">
-                <span class="nav-item-icon icon material-icons">email</span>
+                <span class="nav-item-icon icon material-icons-outlined">email</span>
                 <h3 class="nav-item-title">Emails</h3>
             </div>
             <div id="nav-messages" class="nav-item">
-                <span class="nav-item-icon icon material-icons">chat</span>
+                <span class="nav-item-icon icon material-icons-outlined">chat</span>
                 <h3 class="nav-item-title">Messages</h3>
             </div>
             <div id="nav-notes" class="nav-item">
-                <span class="nav-item-icon icon material-icons">description</span>
+                <span class="nav-item-icon icon material-icons-outlined">description</span>
                 <h3 class="nav-item-title">Notes</h3>
             </div>
             <div id="nav-music" class="nav-item">
@@ -38,7 +38,7 @@
                 <span class="nav-item-close icon material-icons">close</span>
             </div>
             <div id="nav-weather" class="nav-item">
-                <span class="nav-item-icon icon material-icons">cloud</span>
+                <span class="nav-item-icon icon material-icons-outlined">cloud</span>
                 <h3 class="nav-item-title">Weather</h3>
                 <span class="nav-item-close icon material-icons">close</span>
             </div>
@@ -46,13 +46,44 @@
         <div id="dashboard-content" class="dashboard-offset-top">
 
             <!-- DEFAULT DASHBOARD -->
-            <div id="default-dashboard" class="dashboard-window no-display">
+            <div id="default-dashboard" class="dashboard-window">
                 <div id="dash-time-block">
                     <h1 id="dash-time">20:43</h1>
                     <h2 id="dash-date">08/10/2021</h2>
                 </div>
                 <input type="text" id="default-search" class="search-box">
-                <div id="default-feed" class="feed"></div>
+                <div id="default-feed" class="feed">
+                    <div class="dash-item">
+                        <img src="https://scontent-cph2-1.xx.fbcdn.net/v/t1.15752-9/p100x100/242614199_1290549171375633_1438782253240924407_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=58c789&_nc_ohc=cvR2IjR3WZMAX9rICw1&_nc_ht=scontent-cph2-1.xx&oh=9622d653fd41dad68c4327cf61a86856&oe=6189EEAC" class="dash-item-picture">
+                        <div class="dash-item-content no-left-padding">
+                            <h3 class="dash-item-pretext">Mark Jefferson</h3>
+                            <h4 class="dash-item-title clip-text">Welcome to Amazon Web Services One two three four five six seven eight nine ten</h4>
+                            <h4 class="dash-item-time sticky-top-right no-display">20:16</h4>
+                            <div class="dash-item-actions sticky-top-right">
+                                <span class="material-icons icon dash-item-action">open_in_new</span>
+                                <span class="material-icons-outlined icon dash-item-action">arrow_back</span>
+                                <span class="material-icons-outlined icon dash-item-action">close</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dash-item">
+                        <span class="dash-item-picture icon-picture material-icons-outlined">email</span>
+                        <div class="dash-item-content no-left-padding">
+                            <h3 class="dash-item-pretext">Mark Jefferson</h3>
+                            <h4 class="dash-item-title">Welcome to Amazon Web Services</h4>
+                            <h4 class="dash-item-description clip-text">
+                                Amazon Web Services
+                                Welcome to Amazon Web Services
+                                For the next 12 months, you'll have free access to core AWS compute, storage, database, and application services within the limits of asdasd  dsa ds the Free Tier.
+                            </h4>
+                            <h4 class="dash-item-time sticky-top-right">20:16</h4>
+                            <div class="dash-item-actions sticky-top-right no-display">
+                                <span class="material-icons icon dash-item-action">open_in_new</span>
+                                <span class="material-icons-outlined icon dash-item-action">archive</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
 
@@ -63,7 +94,24 @@
                     <input type="text" id="email-search" class="search-box inline">
                 </div>
                 <div id="email-address-list" class="pillbox"></div>
-                <div id="email-feed" class="feed"></div>
+                <div id="email-feed" class="feed">
+                    <div class="dash-item">
+                        <div class="dash-item-content">
+                            <h3 class="dash-item-pretext">Mark Jefferson</h3>
+                            <h4 class="dash-item-title">Welcome to Amazon Web Services</h4>
+                            <h4 class="dash-item-description clip-text">
+                                Amazon Web Services
+                                Welcome to Amazon Web Services
+                                For the next 12 months, you'll have free access to core AWS compute, storage, database, and application services within the limits of asdasd  dsa ds the Free Tier.
+                            </h4>
+                            <h4 class="dash-item-time sticky-top-right no-display">20:16</h4>
+                            <div class="dash-item-actions sticky-top-right">
+                                <span class="material-icons icon dash-item-action">open_in_new</span>
+                                <span class="material-icons-outlined icon dash-item-action">archive</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
 
@@ -74,7 +122,21 @@
                     <input type="text" id="message-search" class="search-box inline">
                 </div>
                 <div id="message-platform-list" class="pillbox"></div>
-                <div id="message-feed" class="feed"></div>
+                <div id="message-feed" class="feed">
+                    <div class="dash-item">
+                        <img src="https://scontent-cph2-1.xx.fbcdn.net/v/t1.15752-9/p100x100/242614199_1290549171375633_1438782253240924407_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=58c789&_nc_ohc=cvR2IjR3WZMAX9rICw1&_nc_ht=scontent-cph2-1.xx&oh=9622d653fd41dad68c4327cf61a86856&oe=6189EEAC" class="dash-item-picture">
+                        <div class="dash-item-content no-left-padding">
+                            <h3 class="dash-item-pretext">Mark Jefferson</h3>
+                            <h4 class="dash-item-title clip-text">Welcome to Amazon Web Services One two three four five six seven eight nine ten</h4>
+                            <h4 class="dash-item-time sticky-top-right no-display">20:16</h4>
+                            <div class="dash-item-actions sticky-top-right">
+                                <span class="material-icons icon dash-item-action">open_in_new</span>
+                                <span class="material-icons-outlined icon dash-item-action">arrow_back</span>
+                                <span class="material-icons-outlined icon dash-item-action">close</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- NOTE -->
@@ -87,11 +149,36 @@
                     <h5>Google Keep</h5>
                     <span class="material-icons platform-redirect-icon icon">open_in_new</span>
                 </a>
-                <div id="note-feed" class="feed"></div>
+                <div id="note-feed" class="feed">
+                    <div class="dash-item">
+                        <div class="dash-item-content">
+                            <h3 class="dash-item-pretext">This is a note!</h3>
+                            <h4 class="dash-item-title">The note has a lot of useful information that can be viewed. In the later patch, it will be editable as well!</h4>
+                            <div class="dash-item-actions sticky-top-right">
+                                <span class="material-icons-outlined icon dash-item-action">close</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dash-item">
+                        <div class="dash-item-content">
+                            <div class="dash-item-checkbox">
+                                <span class="material-icons-outlined icon checkbox">check_box</span>
+                                <h4 class="dash-item-title checked">To do thing no. 1!</h4>
+                            </div>
+                            <div class="dash-item-checkbox">
+                                <span class="material-icons-outlined icon checkbox">check_box_outline_blank</span>
+                                <h4 class="dash-item-title">Another thing lol</h4>
+                            </div>
+                            <div class="dash-item-actions sticky-top-right">
+                                <span class="material-icons-outlined icon dash-item-action">close</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- MUSIC -->
-            <div id="music-dashboard" class="dashboard-window">
+            <div id="music-dashboard" class="dashboard-window no-display">
                 <div class="dashboard-content-header">
                     <span class="material-icons return-btn icon">arrow_back</span>
                     <input type="text" id="message-search" class="search-box inline">

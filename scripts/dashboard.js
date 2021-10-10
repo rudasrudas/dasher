@@ -12,7 +12,8 @@ function initNav(){
 
     // Hide nav bar items
     for(let element of document.getElementsByClassName('nav-item-close')){
-        element.addEventListener('click', () => {
+        element.addEventListener('click', (event) => {
+            event.stopPropagation();
             element.parentElement.classList.add('no-display')
         }, false);
     }

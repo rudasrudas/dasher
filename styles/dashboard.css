@@ -21,7 +21,7 @@
         padding-left: 20px;
         padding-right: 20px;
         
-        border: solid 1px gray;
+        border: solid 1px gray;             /* GOTTA GO */
     }
 
         .dashboard-window {
@@ -36,7 +36,7 @@
 
             #dash-time-block {
                 position: relative;
-                width: 100%;
+                width: inherit;
             }
 
                 #dash-time {
@@ -50,7 +50,7 @@
                 }
 
             #default-search {
-                width: 100%;
+                width: inherit;
                 margin: 20px 0px;
             }
 
@@ -99,7 +99,7 @@
         }
 
             #weather-tabs {
-                border-bottom: solid 1px gray;
+                border-bottom: solid 1px gray;             /* GOTTA GO */
             }
 
             #weather-info {
@@ -151,7 +151,7 @@
                 #weather-daily {}
 
     #dashboard-remarks {
-        height: 100%;
+        height: inherit;
         width: 200px;
         margin-right: 15px;
 
@@ -164,7 +164,7 @@
 
 .dashboard-content-header {
     height: auto;
-    width: 100%;
+    width: inherit;
     display: flex;
     flex-direction: row;
 }
