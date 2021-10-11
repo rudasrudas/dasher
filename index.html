@@ -12,12 +12,23 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/dashboard.css">
     <link rel="stylesheet" href="styles/theme-aviator.css">
-
-    <!-- JS -->
-    <script src="scripts/ejs.min.js"></script>
-    <script src="scripts/dashboard.js"></script>
 </head>
 <body>
+    <div id="search-results" class="dash-item-mock no-display">
+        <div class="dash-item no-box">
+            <img src="https://scontent-cph2-1.xx.fbcdn.net/v/t1.15752-9/p100x100/242614199_1290549171375633_1438782253240924407_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=58c789&_nc_ohc=cvR2IjR3WZMAX9rICw1&_nc_ht=scontent-cph2-1.xx&oh=9622d653fd41dad68c4327cf61a86856&oe=6189EEAC" class="dash-item-picture">
+            <div class="dash-item-content no-left-padding centered-vertically">
+                <h3 class="dash-item-pretext">Weatherspoons</h3>
+                <h4 class="dash-item-title">Thunderutensils</h4>
+            </div>
+        </div>
+        <div class="dash-item no-box no-separator">
+            <span class="dash-item-picture icon-picture material-icons-outlined">search</span>
+            <div class="dash-item-content no-left-padding centered-vertically">
+                <h3 class="dash-item-pretext">Weatherspoons</h3>
+            </div>
+        </div>
+    </div>
     <div id="dashboard-window">
         <div id="dashboard-nav" class="nav dashboard-offset-top">
             <div id="nav-emails" class="nav-item">
@@ -51,35 +62,37 @@
                     <h1 id="dash-time">20:43</h1>
                     <h2 id="dash-date">08/10/2021</h2>
                 </div>
-                <input type="text" id="default-search" class="search-box">
-                <div id="default-feed" class="feed">
-                    <div class="dash-item">
-                        <img src="https://scontent-cph2-1.xx.fbcdn.net/v/t1.15752-9/p100x100/242614199_1290549171375633_1438782253240924407_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=58c789&_nc_ohc=cvR2IjR3WZMAX9rICw1&_nc_ht=scontent-cph2-1.xx&oh=9622d653fd41dad68c4327cf61a86856&oe=6189EEAC" class="dash-item-picture">
-                        <div class="dash-item-content no-left-padding">
-                            <h3 class="dash-item-pretext">Mark Jefferson</h3>
-                            <h4 class="dash-item-title clip-text">Welcome to Amazon Web Services One two three four five six seven eight nine ten</h4>
-                            <h4 class="dash-item-time sticky-top-right no-display">20:16</h4>
-                            <div class="dash-item-actions sticky-top-right">
-                                <span class="material-icons icon dash-item-action">open_in_new</span>
-                                <span class="material-icons-outlined icon dash-item-action">arrow_back</span>
-                                <span class="material-icons-outlined icon dash-item-action">close</span>
+                <input type="text" id="default-search" class="search-box add-top" oninput="updateSearch(this)">
+                <div class="feed-wrapper add-top">
+                    <div id="default-feed" class="feed">
+                        <div class="dash-item">
+                            <img src="https://scontent-cph2-1.xx.fbcdn.net/v/t1.15752-9/p100x100/242614199_1290549171375633_1438782253240924407_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=58c789&_nc_ohc=cvR2IjR3WZMAX9rICw1&_nc_ht=scontent-cph2-1.xx&oh=9622d653fd41dad68c4327cf61a86856&oe=6189EEAC" class="dash-item-picture">
+                            <div class="dash-item-content no-left-padding">
+                                <h3 class="dash-item-pretext">Mark Jefferson</h3>
+                                <h4 class="dash-item-title clip-text">Welcome to Amazon Web Services One two three four five six seven eight nine ten</h4>
+                                <h4 class="dash-item-time sticky-top-right no-display">20:16</h4>
+                                <div class="dash-item-actions sticky-top-right">
+                                    <span class="material-icons icon dash-item-action">open_in_new</span>
+                                    <span class="material-icons-outlined icon dash-item-action">arrow_back</span>
+                                    <span class="material-icons-outlined icon dash-item-action">close</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="dash-item">
-                        <span class="dash-item-picture icon-picture material-icons-outlined">email</span>
-                        <div class="dash-item-content no-left-padding">
-                            <h3 class="dash-item-pretext">Mark Jefferson</h3>
-                            <h4 class="dash-item-title">Welcome to Amazon Web Services</h4>
-                            <h4 class="dash-item-description clip-text">
-                                Amazon Web Services
-                                Welcome to Amazon Web Services
-                                For the next 12 months, you'll have free access to core AWS compute, storage, database, and application services within the limits of asdasd  dsa ds the Free Tier.
-                            </h4>
-                            <h4 class="dash-item-time sticky-top-right">20:16</h4>
-                            <div class="dash-item-actions sticky-top-right no-display">
-                                <span class="material-icons icon dash-item-action">open_in_new</span>
-                                <span class="material-icons-outlined icon dash-item-action">archive</span>
+                        <div class="dash-item">
+                            <span class="dash-item-picture icon-picture material-icons-outlined">email</span>
+                            <div class="dash-item-content no-left-padding">
+                                <h3 class="dash-item-pretext">Mark Jefferson</h3>
+                                <h4 class="dash-item-title">Welcome to Amazon Web Services</h4>
+                                <h4 class="dash-item-description clip-text">
+                                    Amazon Web Services
+                                    Welcome to Amazon Web Services
+                                    For the next 12 months, you'll have free access to core AWS compute, storage, database, and application services within the limits of asdasd  dsa ds the Free Tier.
+                                </h4>
+                                <h4 class="dash-item-time sticky-top-right">20:16</h4>
+                                <div class="dash-item-actions sticky-top-right no-display">
+                                    <span class="material-icons icon dash-item-action">open_in_new</span>
+                                    <span class="material-icons-outlined icon dash-item-action">close</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -107,20 +120,22 @@
                         <span class="material-icons icon pill-redirect">open_in_new</span>
                     </div>
                 </div>
-                <div id="email-feed" class="feed">
-                    <div class="dash-item">
-                        <div class="dash-item-content">
-                            <h3 class="dash-item-pretext">Mark Jefferson</h3>
-                            <h4 class="dash-item-title">Welcome to Amazon Web Services</h4>
-                            <h4 class="dash-item-description clip-text">
-                                Amazon Web Services
-                                Welcome to Amazon Web Services
-                                For the next 12 months, you'll have free access to core AWS compute, storage, database, and application services within the limits of asdasd  dsa ds the Free Tier.
-                            </h4>
-                            <h4 class="dash-item-time sticky-top-right no-display">20:16</h4>
-                            <div class="dash-item-actions sticky-top-right">
-                                <span class="material-icons icon dash-item-action">open_in_new</span>
-                                <span class="material-icons-outlined icon dash-item-action">archive</span>
+                <div class="feed-wrapper add-top">
+                    <div id="email-feed" class="feed">
+                        <div class="dash-item">
+                            <div class="dash-item-content">
+                                <h3 class="dash-item-pretext">Mark Jefferson</h3>
+                                <h4 class="dash-item-title">Welcome to Amazon Web Services</h4>
+                                <h4 class="dash-item-description clip-text">
+                                    Amazon Web Services
+                                    Welcome to Amazon Web Services
+                                    For the next 12 months, you'll have free access to core AWS compute, storage, database, and application services within the limits of asdasd  dsa ds the Free Tier.
+                                </h4>
+                                <h4 class="dash-item-time sticky-top-right no-display">20:16</h4>
+                                <div class="dash-item-actions sticky-top-right">
+                                    <span class="material-icons icon dash-item-action">open_in_new</span>
+                                    <span class="material-icons-outlined icon dash-item-action">close</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -148,17 +163,19 @@
                         <span class="material-icons icon pill-redirect">open_in_new</span>
                     </div>
                 </div>
-                <div id="message-feed" class="feed">
-                    <div class="dash-item">
-                        <img src="https://scontent-cph2-1.xx.fbcdn.net/v/t1.15752-9/p100x100/242614199_1290549171375633_1438782253240924407_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=58c789&_nc_ohc=cvR2IjR3WZMAX9rICw1&_nc_ht=scontent-cph2-1.xx&oh=9622d653fd41dad68c4327cf61a86856&oe=6189EEAC" class="dash-item-picture">
-                        <div class="dash-item-content no-left-padding">
-                            <h3 class="dash-item-pretext">Mark Jefferson</h3>
-                            <h4 class="dash-item-title clip-text">Welcome to Amazon Web Services One two three four five six seven eight nine ten</h4>
-                            <h4 class="dash-item-time sticky-top-right no-display">20:16</h4>
-                            <div class="dash-item-actions sticky-top-right">
-                                <span class="material-icons icon dash-item-action">open_in_new</span>
-                                <span class="material-icons-outlined icon dash-item-action">arrow_back</span>
-                                <span class="material-icons-outlined icon dash-item-action">close</span>
+                <div class="feed-wrapper add-top">
+                    <div id="message-feed" class="feed">
+                        <div class="dash-item">
+                            <img src="https://scontent-cph2-1.xx.fbcdn.net/v/t1.15752-9/p100x100/242614199_1290549171375633_1438782253240924407_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=58c789&_nc_ohc=cvR2IjR3WZMAX9rICw1&_nc_ht=scontent-cph2-1.xx&oh=9622d653fd41dad68c4327cf61a86856&oe=6189EEAC" class="dash-item-picture">
+                            <div class="dash-item-content no-left-padding">
+                                <h3 class="dash-item-pretext">Mark Jefferson</h3>
+                                <h4 class="dash-item-title clip-text">Welcome to Amazon Web Services One two three four five six seven eight nine ten</h4>
+                                <h4 class="dash-item-time sticky-top-right no-display">20:16</h4>
+                                <div class="dash-item-actions sticky-top-right">
+                                    <span class="material-icons icon dash-item-action">open_in_new</span>
+                                    <span class="material-icons-outlined icon dash-item-action">arrow_back</span>
+                                    <span class="material-icons-outlined icon dash-item-action">close</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -175,28 +192,30 @@
                     <h5>Google Keep</h5>
                     <span class="material-icons platform-redirect-icon icon">open_in_new</span>
                 </a>
-                <div id="note-feed" class="feed">
-                    <div class="dash-item">
-                        <div class="dash-item-content">
-                            <h3 class="dash-item-pretext">This is a note!</h3>
-                            <h4 class="dash-item-title">The note has a lot of useful information that can be viewed. In the later patch, it will be editable as well!</h4>
-                            <div class="dash-item-actions sticky-top-right">
-                                <span class="material-icons-outlined icon dash-item-action">close</span>
+                <div class="feed-wrapper add-top">
+                    <div id="note-feed" class="feed">
+                        <div class="dash-item">
+                            <div class="dash-item-content">
+                                <h3 class="dash-item-pretext">This is a note!</h3>
+                                <h4 class="dash-item-title">The note has a lot of useful information that can be viewed. In the later patch, it will be editable as well!</h4>
+                                <div class="dash-item-actions sticky-top-right">
+                                    <span class="material-icons-outlined icon dash-item-action">close</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="dash-item">
-                        <div class="dash-item-content">
-                            <div class="dash-item-checkbox">
-                                <span class="material-icons-outlined icon checkbox">check_box</span>
-                                <h4 class="dash-item-title checked">To do thing no. 1!</h4>
-                            </div>
-                            <div class="dash-item-checkbox">
-                                <span class="material-icons-outlined icon checkbox">check_box_outline_blank</span>
-                                <h4 class="dash-item-title">Another thing lol</h4>
-                            </div>
-                            <div class="dash-item-actions sticky-top-right">
-                                <span class="material-icons-outlined icon dash-item-action">close</span>
+                        <div class="dash-item">
+                            <div class="dash-item-content">
+                                <div class="dash-item-checkbox">
+                                    <span class="material-icons-outlined icon checkbox">check_box</span>
+                                    <h4 class="dash-item-title checked">To do thing no. 1!</h4>
+                                </div>
+                                <div class="dash-item-checkbox">
+                                    <span class="material-icons-outlined icon checkbox">check_box_outline_blank</span>
+                                    <h4 class="dash-item-title">Another thing lol</h4>
+                                </div>
+                                <div class="dash-item-actions sticky-top-right">
+                                    <span class="material-icons-outlined icon dash-item-action">close</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -213,32 +232,66 @@
                     <h5>Youtube Music</h5>
                     <span class="material-icons platform-redirect-icon icon">open_in_new</span>
                 </a>
-                <div id="music-feed">
-                    <div id="music-playlist-feed" class="feed">
-                        <div class="dash-item">
-                            <img src="https://scontent-cph2-1.xx.fbcdn.net/v/t1.15752-9/p100x100/242614199_1290549171375633_1438782253240924407_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=58c789&_nc_ohc=cvR2IjR3WZMAX9rICw1&_nc_ht=scontent-cph2-1.xx&oh=9622d653fd41dad68c4327cf61a86856&oe=6189EEAC" class="dash-item-cover">
-                            <div class="dash-item-content">
-                                <h3 class="dash-item-pretext">Mark Jefferson</h3>
-                                <h4 class="dash-item-title">Welcome to Amazon Web Services</h4>
-                                <h4 class="dash-item-description clip-text">
-                                    Amazon Web Services
-                                    Welcome to Amazon Web Services
-                                    For the next 12 months, you'll have free access to core AWS compute, storage, database, and application services within the limits of asdasd  dsa ds the Free Tier.
-                                </h4>
-                                <h4 class="dash-item-time sticky-top-right no-display">20:16</h4>
-                                <div class="dash-item-actions sticky-top-right">
-                                    <span class="material-icons icon dash-item-action">open_in_new</span>
-                                    <span class="material-icons-outlined icon dash-item-action">archive</span>
+                <div id="music-feed" class="add-top">
+                    <div class="feed-wrapper">
+                        <div id="music-playlist-feed" class="feed">
+                            <div class="dash-item">
+                                <img src="https://scontent-cph2-1.xx.fbcdn.net/v/t1.15752-9/p100x100/242614199_1290549171375633_1438782253240924407_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=58c789&_nc_ohc=cvR2IjR3WZMAX9rICw1&_nc_ht=scontent-cph2-1.xx&oh=9622d653fd41dad68c4327cf61a86856&oe=6189EEAC" class="dash-item-album">
+                                <div class="dash-item-content no-left-padding centered-vertically">
+                                    <h3 class="dash-item-pretext">My Mix 1</h3>
+                                    <h4 class="dash-item-title clip-text">Ezra Furman, The Chordettes, The Oh Hellos, Bon Iver</h4>
+                                    <div class="dash-item-actions sticky-middle-right more-space background-fade-left no-display">
+                                        <span class="material-icons icon dash-item-action">queue_music</span>
+                                        <span class="material-icons icon dash-item-action">shuffle</span>
+                                        <span class="material-icons icon big fix-big-margin dash-item-action">play_arrow</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dash-item">
+                                <img src="https://scontent-cph2-1.xx.fbcdn.net/v/t1.15752-9/p100x100/242614199_1290549171375633_1438782253240924407_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=58c789&_nc_ohc=cvR2IjR3WZMAX9rICw1&_nc_ht=scontent-cph2-1.xx&oh=9622d653fd41dad68c4327cf61a86856&oe=6189EEAC" class="dash-item-album">
+                                <div class="dash-item-content no-left-padding centered-vertically">
+                                    <h3 class="dash-item-pretext">My Mix 1</h3>
+                                    <h4 class="dash-item-title clip-text">Ezra Furman, The Chordettes, The Oh Hellos, Bon Iver</h4>
+                                    <div class="dash-item-actions sticky-middle-right more-space background-fade-left">
+                                        <span class="material-icons icon dash-item-action">queue_music</span>
+                                        <span class="material-icons icon dash-item-action">shuffle</span>
+                                        <span class="material-icons icon big fix-big-margin dash-item-action">play_arrow</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div id="music-song-feed" class="feed no-display">Playlist contents!</div>
+                    <div class="feed-wrapper no-display">
+                        <div id="music-song-feed" class="feed dash-item-mock">
+                            <div class="dash-item no-box">
+                                <img src="https://scontent-cph2-1.xx.fbcdn.net/v/t1.15752-9/p100x100/242614199_1290549171375633_1438782253240924407_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=58c789&_nc_ohc=cvR2IjR3WZMAX9rICw1&_nc_ht=scontent-cph2-1.xx&oh=9622d653fd41dad68c4327cf61a86856&oe=6189EEAC" class="dash-item-song">
+                                <div class="dash-item-content no-left-padding centered-vertically">
+                                    <h3 class="dash-item-pretext">The Scientist</h3>
+                                    <h4 class="dash-item-title clip-text">Coldplay</h4>
+                                    <h4 class="dash-item-time sticky-middle-right">5:16</h4>
+                                    <div class="dash-item-actions sticky-middle-right background-fade-left no-display">
+                                        <span class="material-icons icon dash-item-action">more_vert</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dash-item no-box">
+                                <img src="https://scontent-cph2-1.xx.fbcdn.net/v/t1.15752-9/p100x100/242614199_1290549171375633_1438782253240924407_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=58c789&_nc_ohc=cvR2IjR3WZMAX9rICw1&_nc_ht=scontent-cph2-1.xx&oh=9622d653fd41dad68c4327cf61a86856&oe=6189EEAC" class="dash-item-song">
+                                <div class="dash-item-content no-left-padding centered-vertically">
+                                    <h3 class="dash-item-pretext">Have any grapes?</h3>
+                                    <h4 class="dash-item-title clip-text">Duck</h4>
+                                    <h4 class="dash-item-time sticky-middle-right">2:50</h4>
+                                    <div class="dash-item-actions sticky-middle-right background-fade-left no-display">
+                                        <span class="material-icons icon dash-item-action">more_vert</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div id="music-controller" class="add-bottom">
+                <div id="music-controller" class="add-bottom add-top">
                     <div id="music-controls">
                         <span id="music-prev" class="material-icons icon">skip_previous</span>
-                        <span id="music-play" class="material-icons icon">play_arrow</span>
+                        <span id="music-play" class="material-icons icon big fix-big-margin">play_arrow</span>
                         <span id="music-next" class="material-icons icon">skip_next</span>
                     </div>
                     <div id="song-details">
@@ -248,7 +301,7 @@
                     <div id="music-actions">
                         <span id="song-like" class="material-icons icon">thumb_up_alt</span>
                         <span id="music-shuffle" class="material-icons icon">shuffle</span>
-                        <span id="music-playlist" class="material-icons icon">arrow_drop_up</span>
+                        <span id="music-playlist" class="material-icons icon big fix-big-margin">arrow_drop_up</span>
                     </div>
                 </div>
             </div>
@@ -267,37 +320,85 @@
                     <li id="weather-hourly-tab">Hourly</li>
                     <li id="weather-daily-tab">Daily</li>
                 </ul>
-                <div id="weather-info" class="add-bottom">
-                    <div id="weather-now" class="weather-window">
-                        <h1 id="weather-now-temp">10°C</h1>
-                        <div id="weather-now-status">
-                            <img src="https://www.accuweather.com/images/weathericons/18.svg" id="weather-now-icon">
-                            <h4 id="weather-now-status-text">Heavy rain</h4>
+                <div id="weather-info" class="add-bottom add-top">
+                    <div>
+                        <div id="weather-now" class="weather-window dash-item dash-item-content weather-padding">
+                            <div>
+                                <h1 id="weather-now-temp">10°</h1>
+                                <h4 class="dash-item-description">Feels like 6°</h4>
+                            </div>
+                            <div id="weather-now-status">
+                                <img src="https://www.accuweather.com/images/weathericons/18.svg" id="weather-now-icon">
+                                <h4 id="weather-now-status-text">Heavy rain</h4>
+                            </div>
+                            <ul id="weather-now-details">
+                                <li>
+                                    <h4 id="weather-now-precipitation">60</h4><h4>%</h4>
+                                    <h5>Precipitation</h5>
+                                </li>
+                                <li>
+                                    <h4 id="weather-now-cloud-coverage">20</h4><h4>%</h4>
+                                    <h5>Cloud coverage</h5>
+                                </li>
+                                <li>
+                                    <h4 id="weather-now-wind">6</h4><h5>km/h</h5>
+                                    <h5>Wind</h5>
+                                </li>
+                            </ul>
                         </div>
-                        <ul id="weather-now-details">
-                            <li>
-                                <h4 id="weather-now-precipitation">60</h4><h4>%</h4>
-                                <h5>Precipitation</h5>
-                            </li>
-                            <li>
-                                <h4 id="weather-now-cloud-coverage">20</h4><h4>%</h4>
-                                <h5>Cloud coverage</h5>
-                            </li>
-                            <li>
-                                <h4 id="weather-now-wind">6</h4><h5>km/h</h5>
-                                <h5>Wind</h5>
-                            </li>
-                        </ul>
                     </div>
-                    <div id="weather-hourly" class="weather-window feed no-display">
-                        
+                    <div class="feed-wrapper no-display">
+                        <div id="weather-hourly" class="weather-window feed">
+                            <h3 class="dash-feed-separator">8/10</h3>
+                            <div class="dash-item">
+                                <div class="dash-item-content centered-vertically row spaced-out weather-padding">
+                                    <h4 class="dash-item-title">22:00</h4>
+                                    <div class="inline-items no-gap">
+                                        <h2 class="dash-item-title">10°</h2>
+                                        <h4 class="dash-item-description">/5°</h4>
+                                    </div>
+                                    <div class="inline-items">
+                                        <img src="https://www.accuweather.com/images/weathericons/15.svg" class="weather-icon">
+                                        <h4 class="dash-item-title">Mostly sunny</h4>
+                                    </div>
+                                    <div class="inline-items no-gap">
+                                        <span class="material-icons icon">water_drop</span>
+                                        <h4>65%</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div id="weather-daily" class="weather-window feed no-display">
+                    <div class="feed-wrapper no-display">
+                        <div id="weather-daily" class="weather-window feed">
+                            <h3 class="dash-feed-separator">Week 42</h3>
+                            <div class="dash-item">
+                                <div class="dash-item-content centered-vertically row spaced-out weather-padding">
+                                    <h4 class="dash-item-title">Thu<br>7/10</h4>
+                                    <div class="inline-items no-gap">
+                                        <h2 class="dash-item-title">12°</h2>
+                                        <h4 class="dash-item-description">/8°</h4>
+                                    </div>
+                                    <div class="inline-items">
+                                        <img src="https://www.accuweather.com/images/weathericons/14.svg" class="weather-icon">
+                                        <h4 class="dash-item-title">Mostly sunny</h4>
+                                    </div>
+                                    <div class="inline-items no-gap">
+                                        <span class="material-icons icon">water_drop</span>
+                                        <h4>15%</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div id="dashboard-remarks"></div>
     </div>
+
+    <!-- JS -->
+    <script src="scripts/dashboard.js"></script>
+    <script src="scripts/search.js"></script>
 </body>
 </html>

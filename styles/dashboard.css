@@ -1,3 +1,10 @@
+#search-results {
+    position: fixed;
+    min-height: 50px;           /* GOTTA GO */
+    background-color: white;  /* GOTTA GO */
+    z-index: 1;
+}
+
 #dashboard-window {
     width: inherit;
     height: inherit;
@@ -51,7 +58,6 @@
 
             #default-search {
                 width: inherit;
-                margin: 20px 0px;
             }
 
         #email-dashboard {}
@@ -76,6 +82,7 @@
                     display: flex;
                     flex-direction: row;
                     justify-content: flex-end;
+                    align-items: center;
                     flex: 1;
                 }
 
@@ -89,9 +96,7 @@
                 flex: 1;
             }
 
-                #music-song-feed {
-                    position: absolute;
-                }
+                #music-song-feed {}
 
         #weather-dashboard {
             display: flex;
@@ -113,7 +118,7 @@
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
-                    margin: 20px 0px;
+                    align-items: center;
                     height: 150px;
                 }
 

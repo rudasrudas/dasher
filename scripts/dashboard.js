@@ -40,8 +40,8 @@ function initNav(){
 }
 
 function togglePlaylistVisibility(){
-    let pl = document.getElementById('music-song-feed');
-    let m = document.getElementById('music-playlist-feed');
+    let pl = document.getElementById('music-song-feed').parentElement;
+    let m = document.getElementById('music-playlist-feed').parentElement;
 
     if(pl.classList.contains('no-display')){
         m.classList.add('no-display');
@@ -63,7 +63,7 @@ function displayDashboard(dashId){
 function displayWeather(weatherId){
     return function(){
         hideAllWeathers();
-        document.getElementById(`${weatherId}`).classList.remove('no-display');
+        document.getElementById(`${weatherId}`).parentElement.classList.remove('no-display');
     }
 }
 
@@ -75,6 +75,6 @@ function hideAllDashboards(){
 
 function hideAllWeathers(){
     for(let dash of document.getElementsByClassName('weather-window')){
-        dash.classList.add('no-display');
+        dash.parentElement.classList.add('no-display');
     }
 }

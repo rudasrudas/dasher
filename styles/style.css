@@ -100,7 +100,17 @@ h5 {
 .icon {
     user-select: none;
     cursor: pointer;
+    vertical-align: middle;
 }
+
+    .icon.big {
+        font-size: 3rem;
+    }
+
+        .icon.big.fix-big-margin {
+            margin-left: -5px;
+            margin-right: -5px;
+        }
 
 .platform-redirect {
     display: flex;
@@ -125,6 +135,22 @@ h5 {
     margin-bottom: 20px;
 }
 
+.centered-vertically {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+    .centered-vertically.row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .spaced-out {
+        justify-content: space-between;
+    }
+
 .return-btn {
     font-size: 3rem;
     margin-right: 10px;
@@ -142,6 +168,29 @@ h5 {
     padding-left: 0px !important;
 }
 
+.no-top-padding {
+    padding-top: 0px !important;
+}
+
+.no-bottom-padding {
+    padding-bottom: 0px !important;
+}
+
+.inline-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.no-gap {
+    gap: 0px;
+}
+
+.weather-icon {
+    width: 60px;
+    height: auto;
+}
 
 .pillbox {
     display: flex;
@@ -180,10 +229,48 @@ h5 {
     top: 0;
 }
 
-.feed {
-    width: inherit;
+.sticky-middle-right {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+    .sticky-middle-right.more-space {
+        right: 15px;
+    }
+
+.background-fade-left {
+    background: #fff;        /* GOTTA GO */
+    
+}
+
+.background-fade-left:before {
+    content: "";
+    position: absolute;
+    display: block;
+    left: -75px;
+    width: 75px;
+    top: 0px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffff);        /* GOTTA GO */
+}
+
+.feed-wrapper {
     flex: 1;
-    margin: 20px 0px;
+    width: 100%;
+    position: relative;
+}
+
+.feed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
     overflow-y: scroll;
     scrollbar-width: none;  /* Hide scrollbar for Firefox */
 }
@@ -193,7 +280,19 @@ h5 {
         -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
     }
 
-    .dash-item {
+    .dash-feed-separator {
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    /* Same looks as dash-item */
+    .dash-item-mock {
+        margin-bottom: 10px;
+
+        border: solid 1px gray;             /* GOTTA GO */
+    }
+
+    .dash-item:not(.no-box) {
         width: inherit;
         height: auto;
         min-height: 50px;
@@ -204,6 +303,28 @@ h5 {
 
         border: solid 1px gray;             /* GOTTA GO */
     }
+
+        .dash-item.no-box {
+            width: inherit;
+            height: auto;
+            min-height: 50px;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .dash-item.no-box:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            border-bottom: solid 1px gray;     /* GOTTA GO */
+            bottom: 0;
+        }
+
+        .dash-item.no-box.no-separator:before {
+            border-bottom: none;
+        }
 
         .dash-item-picture {
             width: 50px;
@@ -222,14 +343,26 @@ h5 {
                 background-color: #adb5bd;      /* GOTTA GO */
             }
 
-        .dash-item-cover {
-            
+        .dash-item-album {
+            margin: 10px;
+            width: 100px;
+            height: 100px;
+        }
+
+        .dash-item-song {
+            width: 50px;
+            height: fit-content;
+            margin: 10px;
         }
 
         .dash-item-content {
             flex: 1;
             padding: 10px;
         }
+
+            .dash-item-content.weather-padding {
+                padding: 5px 15px;
+            }
 
             .dash-item-time {
                 padding: 10px;
@@ -286,3 +419,4 @@ h5 {
                 .dash-item-action {
                     font-size: 1.5rem;
                 }
+
