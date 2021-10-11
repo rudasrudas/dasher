@@ -148,7 +148,22 @@ h5 {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
+    gap: 5px;
 }
+
+    .pill {
+        padding: 2px 5px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        border: solid 1px gray;     /* GOTTA GO */
+    }
+
+        .pill-redirect {
+            font-size: 1rem;
+            margin-left: 5px;
+        }
 
 .search-box {
     padding: 5px 10px;
@@ -206,6 +221,10 @@ h5 {
 
                 background-color: #adb5bd;      /* GOTTA GO */
             }
+
+        .dash-item-cover {
+            
+        }
 
         .dash-item-content {
             flex: 1;
