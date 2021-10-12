@@ -15,17 +15,36 @@
 </head>
 <body>
     <div id="search-results" class="dash-item-mock no-display">
-        <div class="dash-item no-box">
-            <img src="https://scontent-cph2-1.xx.fbcdn.net/v/t1.15752-9/p100x100/242614199_1290549171375633_1438782253240924407_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=58c789&_nc_ohc=cvR2IjR3WZMAX9rICw1&_nc_ht=scontent-cph2-1.xx&oh=9622d653fd41dad68c4327cf61a86856&oe=6189EEAC" class="dash-item-picture">
+        <div class="dash-item no-box no-separator">
+            <img src="https://www.accuweather.com/images/weathericons/12.svg" class="search-result-image">
             <div class="dash-item-content no-left-padding centered-vertically">
-                <h3 class="dash-item-pretext">Weatherspoons</h3>
-                <h4 class="dash-item-title">Thunderutensils</h4>
+                <h4 class="dash-item-pretext bold">weather</h4>
+                <h5 class="dash-item-title">7C - Rainy</h5>
             </div>
         </div>
         <div class="dash-item no-box no-separator">
-            <span class="dash-item-picture icon-picture material-icons-outlined">search</span>
+            <img src="https://scontent-cph2-1.xx.fbcdn.net/v/t1.15752-9/p100x100/242614199_1290549171375633_1438782253240924407_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=58c789&_nc_ohc=cvR2IjR3WZMAX9rICw1&_nc_ht=scontent-cph2-1.xx&oh=9622d653fd41dad68c4327cf61a86856&oe=6189EEAC" class="search-result-image">
             <div class="dash-item-content no-left-padding centered-vertically">
-                <h3 class="dash-item-pretext">Weatherspoons</h3>
+                <h4 class="dash-item-pretext bold">Google extensive result</h4>
+                <h5 class="dash-item-title">With a subtext</h5>
+            </div>
+        </div>
+        <div class="dash-item no-box no-separator">
+            <span class="material-icons icon search-result-image">search</span>
+            <div class="dash-item-content less-padding no-left-padding centered-vertically">
+                <h4 class="dash-item-pretext">Google search</h4>
+            </div>
+        </div>
+        <div class="dash-item no-box no-separator">
+            <span class="material-icons icon search-result-image">schedule</span>
+            <div class="dash-item-content less-padding no-left-padding centered-vertically">
+                <h4 class="dash-item-pretext">Local history</h4>
+            </div>
+        </div>
+        <div class="dash-item no-box no-separator">
+            <span class="material-icons icon search-result-image">code</span>
+            <div class="dash-item-content less-padding no-left-padding centered-vertically">
+                <h4 class="dash-item-pretext bold">Dasher action</h4>
             </div>
         </div>
     </div>
@@ -156,6 +175,10 @@
                     </div>
                     <div class="pill">
                         <h5>Messenger (Old)</h5>
+                        <span class="material-icons icon pill-redirect">open_in_new</span>
+                    </div>
+                    <div class="pill">
+                        <h5>Discord</h5>
                         <span class="material-icons icon pill-redirect">open_in_new</span>
                     </div>
                     <div class="pill">
@@ -327,11 +350,11 @@
                                 <h1 id="weather-now-temp">10°</h1>
                                 <h4 class="dash-item-description">Feels like 6°</h4>
                             </div>
-                            <div id="weather-now-status">
-                                <img src="https://www.accuweather.com/images/weathericons/18.svg" id="weather-now-icon">
+                            <div id="weather-now-status" class="weather-status">
+                                <img src="https://www.accuweather.com/images/weathericons/18.svg" id="weather-now-icon" class="weather-icon big">
                                 <h4 id="weather-now-status-text">Heavy rain</h4>
                             </div>
-                            <ul id="weather-now-details">
+                            <ul id="weather-now-details" class="weather-details">
                                 <li>
                                     <h4 id="weather-now-precipitation">60</h4><h4>%</h4>
                                     <h5>Precipitation</h5>

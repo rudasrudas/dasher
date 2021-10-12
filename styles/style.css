@@ -49,10 +49,12 @@ h3 {
 
 h4 {
     font-size: 1rem;
+    font-weight: 400;
 }
 
 h5 {
     font-size: 0.75rem;
+    font-weight: 400;
 }
 
 .nav {
@@ -176,6 +178,14 @@ h5 {
     padding-bottom: 0px !important;
 }
 
+.no-bold {
+    font-weight: 400;
+}
+
+.bold {
+    font-weight: 600;
+}
+
 .inline-items {
     display: flex;
     flex-direction: row;
@@ -191,6 +201,31 @@ h5 {
     width: 60px;
     height: auto;
 }
+
+.weather-icon.big {
+    width: 7rem;
+    height: auto;
+    align-self: flex-start;
+}
+
+.weather-status {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-details {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 15px;
+}
+
+    .weather-details * {
+        list-style: none;
+        display: inline;
+    }
 
 .pillbox {
     display: flex;
@@ -222,6 +257,20 @@ h5 {
     .search-box.inline {
         flex: 1;
     }
+
+        .search-result-image {
+            width: 40px;
+            height: fit-content;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-self: center;
+            margin: 5px;
+        }
+
+        .search-result-image.icon {
+            height: 100%;
+        }
 
 .sticky-top-right {
     position: absolute;
@@ -295,7 +344,7 @@ h5 {
     .dash-item:not(.no-box) {
         width: inherit;
         height: auto;
-        min-height: 50px;
+        min-height: 25px;
         position: relative;
         display: flex;
         flex-direction: row;
@@ -307,7 +356,7 @@ h5 {
         .dash-item.no-box {
             width: inherit;
             height: auto;
-            min-height: 50px;
+            min-height: 25px;
             position: relative;
             display: flex;
             flex-direction: row;
@@ -359,6 +408,10 @@ h5 {
             flex: 1;
             padding: 10px;
         }
+
+            .dash-item-content.less-padding {
+                padding: 5px;
+            }
 
             .dash-item-content.weather-padding {
                 padding: 5px 15px;

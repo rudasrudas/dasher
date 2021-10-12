@@ -126,30 +126,11 @@
                         align-self: center;
                     }
 
-                    #weather-now-icon {
-                        width: 7rem;
-                        height: auto;
-                        align-self: flex-start;
-                    }
+                    #weather-now-icon {}
 
-                    #weather-now-status {
-                        align-self: flex-start;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                    }
+                    #weather-now-status {}
 
-                    #weather-now-details {
-                        display: flex;
-                        flex-direction: column;
-                        align-self: center;
-                        gap: 15px;
-                    }
-
-                        #weather-now-details * {
-                            list-style: none;
-                            display: inline;
-                        }
+                    #weather-now-details {}
 
                 #weather-hourly {}
 
